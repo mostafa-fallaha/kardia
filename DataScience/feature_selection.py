@@ -1,14 +1,7 @@
 from scipy.stats import chi2_contingency
-from imblearn.over_sampling import SMOTE
 import pandas as pd
-import numpy as np
 import dvc.api, dvc.repo
-from pathlib import Path
 import io
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import accuracy_score, confusion_matrix, recall_score, f1_score, classification_report
-from sklearn.model_selection import cross_val_score
 
 # =======================================================================================================================
 # ================================= Pre-processing ======================================================================
@@ -112,6 +105,3 @@ def feature_selection():
     df_model = df[features_list]
 
     return df_model
-
-df = feature_selection()
-print(df.shape)
