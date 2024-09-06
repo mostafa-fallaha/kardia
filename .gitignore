@@ -1,6 +1,7 @@
 .env
 .ipynb_checkpoints
 __pycache__
+mlruns
 
 ETL/docs/heart_converted.parquet
 ETL/docs/USCODE22_LLCP_102523.HTML

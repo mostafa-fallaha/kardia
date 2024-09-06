@@ -19,4 +19,4 @@ def train_model():
 
     rf_clf.fit(X_train, y_train)
 
-    return rf_clf
+    return rf_clf, X_test, y_test
