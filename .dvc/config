@@ -1,0 +1,4 @@
+[core]
+    remote = heart_remote
+['remote "heart_remote"']
+    url = /tmp/dvc_heart
