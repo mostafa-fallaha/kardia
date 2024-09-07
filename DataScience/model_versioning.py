@@ -3,6 +3,8 @@ import mlflow.sklearn
 from mlflow.models import infer_signature
 from sklearn.metrics import precision_score, recall_score, f1_score, accuracy_score
 from datetime import datetime
+import joblib
+import os
 # import warnings
 # warnings.filterwarnings('ignore')
 
@@ -56,3 +58,7 @@ with mlflow.start_run(run_name=runname) as mlflow_run:
         signature=signature,
         registered_model_name="rf_clf_registered_model"
     )
+
+model_dir = 'c:/Users/MYCOM/Desktop/FSD/FinalProject/DataScience/model'
+os.makedirs(model_dir, exist_ok=True)
+joblib.dump(rf_clf, os.path.join(model_dir, 'model.joblib'))
