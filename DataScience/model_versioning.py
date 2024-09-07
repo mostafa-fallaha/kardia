@@ -59,6 +59,6 @@ with mlflow.start_run(run_name=runname) as mlflow_run:
         registered_model_name="rf_clf_registered_model"
     )
 
-model_dir = 'c:/Users/MYCOM/Desktop/FSD/FinalProject/DataScience/model'
+model_dir = 'DataScience/model'
 os.makedirs(model_dir, exist_ok=True)
 joblib.dump(rf_clf, os.path.join(model_dir, 'model.joblib'))
