@@ -2,12 +2,24 @@
 import joblib
 import numpy as np
 import streamlit as st
+import requests
+import os
 
 # mlflow.set_tracking_uri("http://127.0.0.1:5000/")
 # rf_clf = mlflow.sklearn.load_model(model_uri="models:/rf_clf_registered_model/latest")
 
-model_path = 'model/model.joblib'
-rf_clf = joblib.load(model_path)
+gdive_url = "https://drive.google.com/uc?export=download&id=19tkJ0z32FLsxW9RBsri0HFpY5QnhZIu9"
+local_model_path = '/tmp/model.joblib'
+
+if not os.path.exists(local_model_path):
+    st.write("Downloading model from Google Drive...")
+    response = requests.get(gdive_url)
+    with open(local_model_path, 'wb') as f:
+        f.write(response.content)
+    st.write("Model downloaded successfully")
+
+# model_path = 'model/model.joblib'
+rf_clf = joblib.load(local_model_path)
 
 # --------------------------------------------------------------------
 GENDER_TXT = {
