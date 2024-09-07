@@ -18,7 +18,7 @@ with mlflow.start_run(run_name=runname) as mlflow_run:
     rf_clf, X_test, y_test = train_model()
 
     y_pred_proba = rf_clf.predict_proba(X_test)[:, 1]
-    threshold = 0.3
+    threshold = 0.5
     y_pred_custom = (y_pred_proba >= threshold).astype(int)
 
     accuracy = round(accuracy_score(y_test, y_pred_custom), 3)
@@ -36,7 +36,7 @@ with mlflow.start_run(run_name=runname) as mlflow_run:
 
     # Log params
     mlflow.log_params({
-        "prediction_threshold": 0.3,
+        "prediction_threshold": 0.5,
         "n_estimators": 100,
         "random_state": 42
     })
