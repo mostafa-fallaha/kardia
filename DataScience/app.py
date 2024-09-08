@@ -1,28 +1,13 @@
-# import mlflow.sklearn
-import pickle
+import mlflow.sklearn
+import joblib
 import numpy as np
 import streamlit as st
-import os
-import gdown
 
-st.set_page_config(
-        page_title="Heart Attack Prediction",
-        page_icon="images/heart_real.png"
-    )
+mlflow.set_tracking_uri("http://127.0.0.1:5000/")
+rf_clf = mlflow.sklearn.load_model(model_uri="models:/rf_clf_registered_model/latest")
 
-url = 'https://drive.google.com/uc?id=1ayPTkM36XIXk0GyA986Wy1rT_XUJE3eJ'
-
-output = '/tmp/model.pkl'
-
-if os.path.exists(output):
-    st.write("Model already exists, skipping download.")
-else:
-    st.write("Downloading model from Google Drive...")
-    gdown.download(url, output, quiet=False)
-    st.write("Model downloaded successfully")
-
-with open(output, 'rb') as f:
-    rf_clf = pickle.load(f)
+# model_path = 'c:/Users/MYCOM/Desktop/FSD/FinalProject/DataScience/model/model.joblib'
+# rf_clf = joblib.load(model_path)
 
 # --------------------------------------------------------------------
 GENDER_TXT = {
@@ -95,6 +80,11 @@ AGE_CATEGORY_NUM = {v: k for k, v in AGE_CATEGORY_TXT.items()}
 
 
 # ================================= Main Body =============================================
+st.set_page_config(
+        page_title="Heart Attack Prediction",
+        page_icon="images/heart_real.png"
+    )
+
 st.title("Heart Attack Prediction")
 st.subheader("🎯 Take Control of Your Health with Advanced AI Predictions!")
 
