@@ -78,6 +78,15 @@ AGE_CATEGORY_TXT = {
 }
 AGE_CATEGORY_NUM = {v: k for k, v in AGE_CATEGORY_TXT.items()}
 
+# --------------------------------------------------------------------
+RACE_TXT = {
+    1: "White only, Non-Hispanic",
+    2: "Black only, Non-Hispanic",
+    3: "Other race only, Non-Hispanic",
+    4: "Multiracial, Non-Hispanic",
+    5: "Hispanic"
+}
+RACE_NUM = {v: k for k, v in RACE_TXT.items()}
 
 # ================================= Main Body =============================================
 st.set_page_config(
@@ -120,6 +129,7 @@ st.sidebar.title("Feature Selection")
 st.sidebar.image("images/magnifier.png", width=100)
 
 # Input fields
+race = st.sidebar.selectbox("Race/Ethnicity category", list(RACE_TXT.values()))
 gender = st.sidebar.selectbox("Gender", list(GENDER_TXT.values()))
 general_health = st.sidebar.selectbox("Would you say that in general your health is:", list(GEN_HEALTH_TXT.values()))
 physical_health_days = st.sidebar.number_input("Now thinking about your physical health, "
@@ -183,7 +193,8 @@ if submit:
         'age_category': np.int32(AGE_CATEGORY_NUM[age_category]),
         'bmi': np.float64(bmi),
         'alcohol_drinkers': np.int32(YES_NO_NUM[alcohol_drinkers]),
-        'pneumo_vax_ever': np.int32(YES_NO_NUM[pneumo_vax_ever])
+        'pneumo_vax_ever': np.int32(YES_NO_NUM[pneumo_vax_ever]),
+        "race_ethnicity_category": np.int32(RACE_NUM[race])
     }
 
     input_list = list(input_data.values())
