@@ -3,8 +3,7 @@ import mlflow.sklearn
 from mlflow.models import infer_signature
 from sklearn.metrics import precision_score, recall_score, f1_score, accuracy_score
 from datetime import datetime
-# import joblib
-import pickle
+import joblib
 import os
 # import warnings
 # warnings.filterwarnings('ignore')
@@ -62,5 +61,4 @@ with mlflow.start_run(run_name=runname) as mlflow_run:
 
 model_dir = 'DataScience/model'
 os.makedirs(model_dir, exist_ok=True)
-with open(os.path.join(model_dir, 'model.pkl'), 'wb') as file:
-    pickle.dump(rf_clf, file)
+joblib.dump(rf_clf, os.path.join(model_dir, 'model.joblib'))
