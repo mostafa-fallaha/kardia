@@ -1,13 +1,9 @@
 import mlflow.sklearn
-import joblib
 import numpy as np
 import streamlit as st
 
 mlflow.set_tracking_uri("http://127.0.0.1:5000/")
 rf_clf = mlflow.sklearn.load_model(model_uri="models:/rf_clf_registered_model/latest")
-
-# model_path = 'c:/Users/MYCOM/Desktop/FSD/FinalProject/DataScience/model/model.joblib'
-# rf_clf = joblib.load(model_path)
 
 # --------------------------------------------------------------------
 GENDER_TXT = {
