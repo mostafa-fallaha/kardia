@@ -10,6 +10,12 @@ import gdown
 # mlflow.set_tracking_uri("http://127.0.0.1:5000/")
 # rf_clf = mlflow.sklearn.load_model(model_uri="models:/rf_clf_registered_model/latest")
 
+st.set_page_config(
+        page_title="Heart Attack Prediction",
+        page_icon="images/heart_real.png"
+    )
+
+
 url = 'https://drive.google.com/uc?id=1ayPTkM36XIXk0GyA986Wy1rT_XUJE3eJ'
 
 output = '/tmp/model.pkl'
@@ -133,11 +139,6 @@ AGE_CATEGORY_NUM = {v: k for k, v in AGE_CATEGORY_TXT.items()}
 
 
 # ================================= Main Body =============================================
-st.set_page_config(
-        page_title="Heart Attack Prediction",
-        page_icon="images/heart_real.png"
-    )
-
 st.title("Heart Attack Prediction")
 st.subheader("🎯 Take Control of Your Health with Advanced AI Predictions!")
 
