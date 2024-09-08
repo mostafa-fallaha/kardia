@@ -1,4 +1,5 @@
 # import mlflow.sklearn
+import pickle
 import joblib
 import numpy as np
 import streamlit as st
@@ -8,8 +9,8 @@ import os
 # mlflow.set_tracking_uri("http://127.0.0.1:5000/")
 # rf_clf = mlflow.sklearn.load_model(model_uri="models:/rf_clf_registered_model/latest")
 
-gdive_url = "https://drive.google.com/uc?export=download&id=19tkJ0z32FLsxW9RBsri0HFpY5QnhZIu9"
-local_model_path = '/tmp/model.joblib'
+gdive_url = "https://drive.google.com/uc?export=download&id=1ayPTkM36XIXk0GyA986Wy1rT_XUJE3eJ"
+local_model_path = '/tmp/model.pkl'
 
 if not os.path.exists(local_model_path):
     st.write("Downloading model from Google Drive...")
@@ -18,8 +19,11 @@ if not os.path.exists(local_model_path):
         f.write(response.content)
     st.write("Model downloaded successfully")
 
-# model_path = 'model/model.joblib'
-rf_clf = joblib.load(local_model_path)
+# model_path = 'model/model.pkl'
+# rf_clf = joblib.load(local_model_path)
+
+with open(local_model_path, 'rb') as f:
+    rf_clf = pickle.load(f)
 
 # --------------------------------------------------------------------
 GENDER_TXT = {
