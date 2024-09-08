@@ -102,6 +102,7 @@ def feature_selection():
     chi_df = chi_df.loc[(chi_df.index != 'weight_in_kilograms') & (chi_df.index != 'last_checkup_time')]
 
     features_list = chi_df.index.to_list()
+    features_list.append('race_ethnicity_category')
 
     df_model = df[features_list]
 
