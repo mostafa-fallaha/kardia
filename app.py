@@ -1,20 +1,14 @@
 # import mlflow.sklearn
 import pickle
-import joblib
 import numpy as np
 import streamlit as st
-import requests
 import os
 import gdown
-
-# mlflow.set_tracking_uri("http://127.0.0.1:5000/")
-# rf_clf = mlflow.sklearn.load_model(model_uri="models:/rf_clf_registered_model/latest")
 
 st.set_page_config(
         page_title="Heart Attack Prediction",
         page_icon="images/heart_real.png"
     )
-
 
 url = 'https://drive.google.com/uc?id=1ayPTkM36XIXk0GyA986Wy1rT_XUJE3eJ'
 
@@ -29,44 +23,6 @@ else:
 
 with open(output, 'rb') as f:
     rf_clf = pickle.load(f)
-
-# def download_file_from_google_drive(id, destination):
-#     URL = "https://drive.google.com/uc?export=download"
-
-#     session = requests.Session()
-
-#     response = session.get(URL, params={'id': id}, stream=True)
-#     token = get_confirm_token(response)
-
-#     if token:
-#         params = {'id': id, 'confirm': token}
-#         response = session.get(URL, params=params, stream=True)
-
-#     save_response_content(response, destination)    
-
-# def get_confirm_token(response):
-#     for key, value in response.cookies.items():
-#         if key.startswith('download_warning'):
-#             return value
-
-#     return None
-
-# def save_response_content(response, destination):
-#     CHUNK_SIZE = 32768
-
-#     with open(destination, "wb") as f:
-#         for chunk in response.iter_content(CHUNK_SIZE):
-#             if chunk:  # filter out keep-alive new chunks
-#                 f.write(chunk)
-
-# file_id = '1ayPTkM36XIXk0GyA986Wy1rT_XUJE3eJ'
-# destination = 'model/model2.pkl'
-# download_file_from_google_drive(file_id, destination)
-
-# local_model_path = '/tmp/model.pkl'
-# rf_clf = joblib.load(local_model_path)
-
-
 
 # --------------------------------------------------------------------
 GENDER_TXT = {
