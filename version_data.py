@@ -44,3 +44,5 @@ with open('.env', 'w') as file:
             file.write(f'VERSION={new_version}\n')
         else:
             file.write(line)
+
+print("--- Data versioned successfully ---")
