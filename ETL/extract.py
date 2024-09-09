@@ -1,6 +1,4 @@
 import pandas as pd
-import numpy as np
-import sqlalchemy
 from pathlib import Path
 from sqlalchemy import create_engine
 pd.set_option('display.max_columns', None)
