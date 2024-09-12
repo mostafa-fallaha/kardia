@@ -7,9 +7,9 @@
 
 This project is divided into three parts:
 
-- ETL: A streamlined pipeline for extracting, transforming, and loading health-related data.
-- Analysis: Power BI was used to analyze key factors contributing to heart attacks.
-- Prediction App: A machine learning Streamlit web application that uses a Random Forest Classifier to predict heart attack risk with 95% accuracy, based on user input.
+- **ETL**: A streamlined pipeline for extracting, transforming, and loading health-related data.
+- **Analysis**: Power BI was used to analyze key factors contributing to heart attacks.
+- **Prediction App**: A machine learning Streamlit web application that uses a Random Forest Classifier to predict heart attack risk with 95% accuracy, based on user input.
 
 ### User Stories
 
@@ -101,7 +101,7 @@ This project is divided into three parts:
 
 > To set up Coffee Express locally, follow these steps:
 
-### Prerequisites
+<!-- ### Prerequisites -->
 
 ### Installation
 
