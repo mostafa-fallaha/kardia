@@ -101,7 +101,16 @@ This project is divided into three parts:
 
 > To set up Kardía locally, follow these steps:
 
-<!-- ### Prerequisites -->
+### Prerequisites
+
+1. **Python**: i prefer downloading Miniconda. Miniconda offers several advantages over a standalone Python installation, especially for data science and scientific computing tasks.<br>
+   You can see how to install it [here](https://docs.anaconda.com/miniconda/).
+
+2. **MySQL and MySQL Workbench**:
+   Download them [here](https://dev.mysql.com/downloads/).<br>
+   _Also in this list, download the MySQL connector. If you're on windows, download this one Connector/NET_
+
+3. **Power BI**: it works on Windows only, and you can download it from the Microsoft Store.
 
 ### Installation
 
