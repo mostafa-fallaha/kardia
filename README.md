@@ -38,7 +38,7 @@ This project is divided into three parts:
 <!-- Database Design -->
 <img src="./readme/title5.svg"/>
 
-### Architecting Data Excellence: Innovative Database Design Strategies:
+<!-- ### Architecting Data Excellence: Innovative Database Design Strategies: -->
 
 <img src="./ETL/dwh/final_dwh.png"/>
 
