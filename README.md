@@ -63,9 +63,9 @@ This project is divided into three parts:
 
 ### User Screens (Power BI report)
 
-| Overview screen                             | Personal Analysis Screen                           |
-| ------------------------------------------- | -------------------------------------------------- |
-| ![Landing](./readme/assets/bi_overview.png) | ![fsdaf](./readme/assets/bi_personal_analysis.png) |
+| Overview screen                              | Personal Analysis Screen                    |
+| -------------------------------------------- | ------------------------------------------- |
+| ![Demo](./readme/assets/bi_overview_gif.gif) | ![Demo](./readme/assets/bi_scatter_gif.gif) |
 
 <br><br>
 
