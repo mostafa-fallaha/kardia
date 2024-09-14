@@ -87,14 +87,28 @@ This project is divided into three parts:
 
 <br><br> -->
 
-<!-- Unit Testing -->
-<!-- <img src="./readme/title9.svg"/>
+<!-- Validations -->
+<img src="./readme/title9.svg"/>
 
-### Precision in Development: Harnessing the Power of Unit Testing:
+<!-- ### Precision in Development: Harnessing the Power of Unit Testing: -->
 
-- This project employs rigorous unit testing methodologies to ensure the reliability and accuracy of code components. By systematically evaluating individual units of the software, we guarantee a robust foundation, identifying and addressing potential issues early in the development process.
+### This project employs a validation methodology to ensure the reliability and accuracy data loading. Which helps in identifying and addressing potential issues early in the development process.
 
-<br><br> -->
+### Extract
+
+| screen shot                                 |
+| ------------------------------------------- |
+| ![Landing](./readme/assets/extract_val.png) |
+
+### Transform and Load
+
+| screen shot                                   |
+| --------------------------------------------- |
+| ![Landing](./readme/assets/transform_val.png) |
+
+_you can see also the data versioning with DVC_.
+
+<br><br>
 
 <!-- How to run -->
 <img src="./readme/title10.svg"/>
@@ -110,7 +124,7 @@ This project is divided into three parts:
    Download them [here](https://dev.mysql.com/downloads/).<br>
    _Also in this list, download the MySQL connector. If you're on windows, download this one Connector/NET_
 
-3. **Power BI**: it works on Windows only, and you can download it from the Microsoft Store.
+3. **Power BI**: it works on Windows only, and you can download it from the Microsoft Store or from [here](https://www.microsoft.com/en-us/power-platform/products/power-bi/downloads).
 
 ### Installation
 

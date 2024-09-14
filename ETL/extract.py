@@ -4,6 +4,7 @@ from sqlalchemy import create_engine
 pd.set_option('display.max_columns', None)
 from dotenv import load_dotenv
 import os
+from validations import validate_extract_script
 
 heart_df = pd.read_parquet("ETL/docs/heart_converted.parquet")
 
@@ -74,3 +75,6 @@ db_staging = os.getenv('DB_STAGING')
 engine = create_engine(f'mysql+pymysql://{user}:{password}@{host}:{port}/{db_staging}')
 
 heart_df.to_sql("heart_data", con = engine, if_exists= 'replace', index= False)
+
+
+print(validate_extract_script(heart_df))

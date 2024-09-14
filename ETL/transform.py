@@ -445,6 +445,37 @@ covid_pos_df.to_sql("d_covid_pos", con = engine_load, if_exists= 'append', index
 
 heart_copy_df.to_sql("f_data", con = engine_load, if_exists= 'append', index= False)
 
+# ============================== Validating Data Loaded to MySQL ===========================================================
+
+from validations import (
+    validate_heart_rows,
+    validate_gender_rows,
+    validate_gen_health_rows,
+    validate_age_category_rows,
+    validate_diabetes_rows,
+    validate_covid_pos_rows,
+    validate_e_cigarette_usage_rows,
+    validate_last_checkup_rows,
+    validate_race_ethnicity_category_rows,
+    validate_rem_teeth_rows,
+    validate_smoking_status_rows,
+    validate_state_rows,
+    validate_tetanus_last_10_tdap_rows
+)
+
+print(f'--- {validate_heart_rows(heart_copy_df)}')
+print(f'--- {validate_age_category_rows(age_category_df)}')
+print(f'--- {validate_state_rows(state_df)}')
+print(f'--- {validate_rem_teeth_rows(rem_teeth_df)}')
+print(f'--- {validate_smoking_status_rows(smoking_status_df)}')
+print(f'--- {validate_covid_pos_rows(covid_pos_df)}')
+print(f'--- {validate_e_cigarette_usage_rows(e_cigarette_usage_df)}')
+print(f'--- {validate_last_checkup_rows(last_checkup_df)}')
+print(f'--- {validate_race_ethnicity_category_rows(race_ethnicity_category_df)}')
+print(f'--- {validate_diabetes_rows(diabetes_df)}')
+print(f'--- {validate_gender_rows(sex_df)}')
+print(f'--- {validate_gen_health_rows(gen_health_df)}')
+print(f'--- {validate_tetanus_last_10_tdap_rows(tetanus_last_10_tdap_df)}')
 
 # ============================== Versioning the Data with DVC =========================================================
 
