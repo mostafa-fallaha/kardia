@@ -1,14 +1,18 @@
 import pandas as pd
 from pathlib import Path
-from sqlalchemy import create_engine
-pd.set_option('display.max_columns', None)
+from sqlalchemy import create_engine, Table, Column, Integer, String, Text, MetaData, TIMESTAMP, insert
+from sqlalchemy.orm import sessionmaker
+import traceback
+from datetime import datetime
 from dotenv import load_dotenv
 import os
 from validations import validate_extract_script
 
-heart_df = pd.read_parquet("ETL/docs/heart_converted.parquet")
+pd.set_option('display.max_columns', None)
 
-VAR_LIST_PATH = Path('ETL/docs/vars_list_with_descriptions.txt')
+heart_df = pd.read_parquet("C:/Users/MYCOM/Desktop/FSD/FinalProject/ETL/docs/heart_converted.parquet")
+
+VAR_LIST_PATH = Path('C:/Users/MYCOM/Desktop/FSD/FinalProject/ETL/docs/vars_list_with_descriptions.txt')
 
 NEW_VAR_NAMES = [
     "SurveyDate",
@@ -71,10 +75,51 @@ password = os.getenv('DB_PASSWORD')
 host = os.getenv('DB_HOST')
 port = os.getenv('DB_PORT')
 db_staging = os.getenv('DB_STAGING')
+logs_db = os.getenv('LOGS_DB')
 
-engine = create_engine(f'mysql+pymysql://{user}:{password}@{host}:{port}/{db_staging}')
+load_engine = create_engine(f'mysql+pymysql://{user}:{password}@{host}:{port}/{db_staging}')
 
-heart_df.to_sql("heart_data", con = engine, if_exists= 'replace', index= False)
+log_engine = create_engine(f'mysql+pymysql://{user}:{password}@{host}:{port}/{logs_db}')
+Session = sessionmaker(bind=log_engine)
+session = Session()
 
+metadata = MetaData()
+logs_table = Table(
+    'logs_table', metadata,
+    Column('id', Integer, primary_key=True),
+    Column('script_name', String(50)),
+    Column('source_db', String(50)),
+    Column('destination_db', String(50)),
+    Column('name_table', String(50)),
+    Column('log_message', Text),
+    Column('log_time', TIMESTAMP, default=datetime.now())
+)
 
-print(validate_extract_script(heart_df))
+log_entry = {
+    "script_name": "extract.py",
+    "source_db": "heart_converted.parquet",
+    "destination_db": "heart_staging_1",
+    "name_table": "heart_data",
+    "log_message": ""
+}
+
+def log_to_db(log_entry: dict):
+    try:
+        stmt = insert(logs_table).values(log_entry)
+        session.execute(stmt)
+        session.commit()
+    except Exception as e:
+        print(f"Failed to log to DB: {e}")
+        session.rollback()
+
+try:
+    heart_df.to_sql("heart_data", con = load_engine, if_exists= 'replace', index= False)
+    val = validate_extract_script(heart_df)
+    if val:
+        log_entry["log_message"] = "The loaded Heart Data to the staging DB is Valid"
+    else:
+        log_entry["log_message"] = "The loaded Heart Data to the staging DB is Invalid"
+    log_to_db(log_entry)
+except Exception as e:
+    log_entry["log_message"] = f"An error occurred: {traceback.format_exc()}"
+    log_to_db(log_entry)
