@@ -32,6 +32,7 @@ This project is divided into three parts:
 - Random Forest Classifier: The machine learning model at the heart of this project is built using Python. The Random Forest algorithm is chosen for its effectiveness in handling binary classification tasks, like predicting the likelihood of a heart attack.
 - MLflow: For model versioning, MLflow is used to manage the lifecycle of the Random Forest model, including tracking experiments, packaging code into reproducible runs, and deploying models.
 - PowerShell Scripts: To streamline and automate repetitive tasks such as running specific Python scripts or managing data workflows.
+- Windows Task Scheduler to scheculde a Batch script for the ETL process.
 
 <br><br>
 
@@ -94,7 +95,13 @@ This project is divided into three parts:
 
 ### This project employs a validation methodology to ensure the reliability and accuracy data loading. Which helps in identifying and addressing potential issues early in the development process.
 
-### Extract
+#### The Validations are logged to a logs table in the database.
+
+| Logs                                 |
+| ------------------------------------ |
+| ![Landing](./readme/assets/logs.png) |
+
+<!-- ### Extract
 
 | screen shot                                 |
 | ------------------------------------------- |
@@ -104,7 +111,7 @@ This project is divided into three parts:
 
 | screen shot                                   |
 | --------------------------------------------- |
-| ![Landing](./readme/assets/transform_val.png) |
+| ![Landing](./readme/assets/transform_val.png) | -->
 
 _you can see also the data versioning with DVC_.
 
@@ -147,38 +154,37 @@ pip instal -r requirements.txt
 mkdir /tmp/dvc_heart
 ```
 
-4. Download the parquet file.
+4. Download the parquet file from [here](https://drive.google.com/uc?export=download&id=1rXp1FxHpeMIqU9JV8NmVnJQ8X4fQnYtQ). And put it in `ETL/docs`.
 
-[parquet file](https://drive.google.com/uc?export=download&id=1rXp1FxHpeMIqU9JV8NmVnJQ8X4fQnYtQ).
-<br>
-put it in `ETL/docs`.
+5. create the logs table, you can find the SQL scripts for it in `ETL/dwh/logs_table.sql`.
 
-5. create a `.env` file in the root of the project containing the following:<br>
+6. create a `.env` file in the root of the project containing the following:<br>
 
 ```
 DB_USER=your database username
 DB_PASSWORD=your database password
 DB_HOST=your host (usually localhost)
 DB_PORT=the port where mysql is running (usually 3306)
+LOGS_DB=the database where your logs table is.
 DB_STAGING=the staging schema name (create the schema in mysql workbench, no need to create any table)
 DB_DWH=the DWH schema name (you need to create tables, in the step 3)
 VERSION=0.9 (this to increment the data version whenever you run the ETL process)
 ```
 
-6. run the `extract.py` in the ETL folder to load to the staging schema.
+7. run the `extract.py` in the ETL folder to load to the staging schema.
 
-7. in mysql workbench, create a new schema (the DWH schema) and put the name in the .env file (here `DB_DWH`). And then run the `final_dwh.sql` (you can find it in ETL/dwh) in the newly created schema to create the tables and the relations.
+8. in mysql workbench, create a new schema (the DWH schema) and put the name in the .env file (here `DB_DWH`). And then run the `final_dwh.sql` (you can find it in ETL/dwh) in the newly created schema to create the tables and the relations.
 
-8. run the `transform.py` in the ETL folder to transform the data and load it to the DWH and to version the data via DVC.
+9. run the `transform.py` in the ETL folder to transform the data and load it to the DWH and to version the data via DVC.
 
-9. run, train and version (via MLFLOW) the machine learning model that reads the data from DVC via the DVC python API.
+10. run, train and version (via MLflow) the machine learning model that reads the data from DVC via the DVC python API.
 
 ```bash
 cd DataScience
 python3 model_versioning.py
 ```
 
-10. run the mlflow ui: cd to the root directory
+11. run the mlflow ui: cd to the root directory
 
 ```bash
 cd ..
@@ -187,7 +193,7 @@ mlflow ui
 
 _this will take the whole terminal._
 
-11. run the streamlit app: open a new terminal in the project directory.
+12. run the streamlit app: open a new terminal in the project directory.
 
 ```bash
 cd DataScience
