@@ -64,9 +64,17 @@ This project is divided into three parts:
 
 ### User Screens (Power BI report)
 
-| Overview screen                              | Personal Analysis Screen                    |
-| -------------------------------------------- | ------------------------------------------- |
-| ![Demo](./readme/assets/bi_overview_gif.gif) | ![Demo](./readme/assets/bi_scatter_gif.gif) |
+| Overview screen                           | Line Chart                                |
+| ----------------------------------------- | ----------------------------------------- |
+| ![Demo](./readme/assets/overview_1_1.gif) | ![Demo](./readme/assets/overview_2_1.gif) |
+
+| Personal Analysis Screen          | Sctter Screen                          |
+| --------------------------------- | -------------------------------------- |
+| ![Demo](./readme/assets/pa_1.gif) | ![Demo](./readme/assets/scatter_1.gif) |
+
+| Disease Analysis Screen             | Decomposition Tree Screen         |
+| ----------------------------------- | --------------------------------- |
+| ![Demo](./readme/assets/da_1_1.gif) | ![Demo](./readme/assets/dt_1.gif) |
 
 <br><br>
 
