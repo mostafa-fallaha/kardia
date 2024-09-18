@@ -87,10 +87,10 @@ RACE_NUM = {v: k for k, v in RACE_TXT.items()}
 # ================================= Main Body =============================================
 st.set_page_config(
         page_title="Heart Attack Prediction",
-        page_icon="images/heart_real.png"
+        page_icon="images/heart_logo.png"
     )
 
-st.title("Heart Attack Prediction")
+st.title("Kardía: Heart Attack Prediction")
 st.subheader("🎯 Take Control of Your Health with Advanced AI Predictions!")
 
 col1, col2 = st.columns([1, 3])
@@ -121,7 +121,7 @@ with col2:
     """)
 
 # ================================= Sidebar =============================================
-st.sidebar.title("Feature Selection")
+st.sidebar.title("User Data")
 st.sidebar.image("images/magnifier.png", width=100)
 
 # Input fields
