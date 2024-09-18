@@ -209,3 +209,5 @@ streamlit run app.py
 ```
 
 Now, you should be able to run the Streamlit app locally and explore its features.
+
+13. to access the Power BI report, you can download it from [here](https://drive.google.com/uc?export=download&id=1Y5mbWoSdpd9VAsPklmpqPvE_E_sgTQ8n).
