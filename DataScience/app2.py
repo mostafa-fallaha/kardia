@@ -9,19 +9,24 @@ st.set_page_config(
         page_icon="images/heart_logo.png"
     )
 
-local_model_path = '/tmp/model.joblib'
 
-gdive_url = "https://drive.google.com/uc?export=download&id=19tkJ0z32FLsxW9RBsri0HFpY5QnhZIu9"
 
-# Check if the model already exists
-if not os.path.exists(local_model_path):
-    st.write("Downloading model from Google Drive...")
-    gdown.download(gdive_url, local_model_path, quiet=False)
-    st.write("Model downloaded successfully")
-else:
-    st.write("Model already exists, skipping download.")
+@st.cache
+def load_model():
+    local_model_path = '/tmp/model.joblib'
 
-rf_clf = joblib.load(local_model_path)
+    gdive_url = "https://drive.google.com/uc?export=download&id=19tkJ0z32FLsxW9RBsri0HFpY5QnhZIu9"
+
+    # Check if the model already exists
+    if not os.path.exists(local_model_path):
+        st.write("Downloading model from Google Drive...")
+        gdown.download(gdive_url, local_model_path, quiet=False)
+        st.write("Model downloaded successfully")
+    else:
+        st.write("Model already exists, skipping download.")
+    return joblib.load(local_model_path)
+
+rf_clf = load_model()
 
 
 # --------------------------------------------------------------------
