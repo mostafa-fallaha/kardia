@@ -49,6 +49,7 @@ This project is divided into three parts:
 
 <br><br>
 
+<!-- Streamlit Community Cloud -->
 <img src="./readme/title11.svg"/>
 
 ### Deployment on Streamlit Community Cloud
@@ -65,7 +66,7 @@ To ensure efficient use of resources, the model is cached using Streamlit’s `@
 
 The app is designed with an intuitive interface that allows users to interact with the machine learning model. Streamlit simplifies deployment by automatically handling scalability and hosting, while the app remains responsive and user-friendly.
 
-> **_You can access the Stream app from [here](https://heart-disease-prediction-xg9z5ycbwhuyasqu458hav.streamlit.app/)_**.
+> **_You can access the Stream app from [here](https://heart-disease-prediction-fsd.streamlit.app/)_**.
 
 <br><br>
 
