@@ -4,11 +4,12 @@
 
 <!-- project philosophy -->
 <img src="./readme/title2.svg"/>
-
+Kardía is a project designed to analyze the factors that contribute to heart attacks and predict the likelihood of someone experiencing one.
+<br>
 This project is divided into three parts:
 
 - **ETL**: A streamlined pipeline for extracting, transforming, and loading health-related data.
-- **Analysis**: Power BI was used to analyze key factors contributing to heart attacks.
+- **Analysis**: Power BI, time Series and Network analysis was used to analyze key factors contributing to heart attacks.
 - **Prediction App**: A machine learning Streamlit web application that uses a Random Forest Classifier to predict heart attack risk with 95% accuracy, based on user input.
 
 ### User Stories
@@ -25,14 +26,15 @@ This project is divided into three parts:
 
 ### Kardía is built using the following technologies:
 
-- Python: This project utilizes Python for creating the ETL (Extract, Transform, Load) pipeline, enabling efficient data handling and preprocessing.
-- Streamlit: Streamlit is used to create the user interface for the machine learning model. It provides an interactive platform where users can input their data and receive heart attack predictions in real-time, making the model easy to use and accessible.
-- MySQL: MySQL is used to design and manage the schema in the database, enabling organized, scalable, and efficient data storage.
-- DVC (Data Version Control): DVC is employed to version the data, ensuring that every change in the dataset is tracked and reproducible. This is especially important in projects dealing with evolving data sources.
-- Random Forest Classifier: The machine learning model at the heart of this project is built using Python. The Random Forest algorithm is chosen for its effectiveness in handling binary classification tasks, like predicting the likelihood of a heart attack.
-- MLflow: For model versioning, MLflow is used to manage the lifecycle of the Random Forest model, including tracking experiments, packaging code into reproducible runs, and deploying models.
-- PowerShell Scripts: To streamline and automate repetitive tasks such as running specific Python scripts or managing data workflows.
-- Windows Task Scheduler to scheculde a Batch script for the ETL process.
+- **Python**: This project utilizes Python for creating the ETL (Extract, Transform, Load) pipeline, enabling efficient data handling and preprocessing.
+- **Streamlit**: Streamlit is used to create the user interface for the machine learning model. It provides an interactive platform where users can input their data and receive heart attack predictions in real-time, making the model easy to use and accessible.
+- **MySQL**: MySQL is used to design and manage the schema in the database, enabling organized, scalable, and efficient data storage.
+- **DVC (Data Version Control)**: DVC is employed to version the data, ensuring that every change in the dataset is tracked and reproducible. This is especially important in projects dealing with evolving data sources.
+- **Random Forest Classifier**: The machine learning model at the heart of this project is built using Python. The Random Forest algorithm is chosen for its effectiveness in handling binary classification tasks, like predicting the likelihood of a heart attack.
+- **MLflow**: For model versioning, MLflow is used to manage the lifecycle of the Random Forest model, including tracking experiments, packaging code into reproducible runs, and deploying models.
+- **Power BI**: Power BI is used to create interactive visualizations and dashboards that provide insights into heart attack trends, enabling data analysis and reporting for better understanding and decision-making.
+- **PowerShell Scripts**: To streamline and automate repetitive tasks such as running specific Python scripts or managing data workflows.
+- **Windows Task Scheduler** to scheculde a Batch script for the ETL process.
 
 <br><br>
 
@@ -45,16 +47,28 @@ This project is divided into three parts:
 
 <br><br>
 
+<img src="./readme/title11.svg"/>
+
+### Deployment on Streamlit Community Cloud
+
+#### 1. Model Storage and Management:
+
+The machine learning model is stored in Google Drive. When the app starts, it checks if the model is already available locally. If not, it downloads the model from Google Drive using `gdown`. The model is then loaded into the app using `joblib`.
+
+#### 2. Model Caching:
+
+To ensure efficient use of resources, the model is cached using Streamlit’s `@st.cache_resource` decorator. This helps reduce the memory load and avoid redundant downloads, especially when the app is reopened.
+
+#### 3. Streamlit App:
+
+The app is designed with an intuitive interface that allows users to interact with the machine learning model. Streamlit simplifies deployment by automatically handling scalability and hosting, while the app remains responsive and user-friendly.
+
+> **_You can access the Stream app from [here](https://heart-disease-prediction-xg9z5ycbwhuyasqu458hav.streamlit.app/)_**.
+
+<br><br>
+
 <!-- Implementation -->
 <img src="./readme/title6.svg"/>
-
-<!-- ### User Screens (Mobile)
-
-| Login screen                              | Register screen                         | Landing screen                          | Loading screen                          |
-| ----------------------------------------- | --------------------------------------- | --------------------------------------- | --------------------------------------- |
-| ![Landing](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) |
-| Home screen                               | Menu Screen                             | Order Screen                            | Checkout Screen                         |
-| ![Landing](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | -->
 
 ### User Screens (Streamlit Web App)
 
@@ -108,18 +122,6 @@ This project is divided into three parts:
 | Logs                                 |
 | ------------------------------------ |
 | ![Landing](./readme/assets/logs.png) |
-
-<!-- ### Extract
-
-| screen shot                                 |
-| ------------------------------------------- |
-| ![Landing](./readme/assets/extract_val.png) |
-
-### Transform and Load
-
-| screen shot                                   |
-| --------------------------------------------- |
-| ![Landing](./readme/assets/transform_val.png) | -->
 
 _you can see also the data versioning with DVC_.
 
