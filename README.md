@@ -4,7 +4,9 @@
 
 <!-- project philosophy -->
 <img src="./readme/title2.svg"/>
-Kardía is a project designed to analyze the factors that contribute to heart attacks and predict the likelihood of someone experiencing one.
+
+#### Kardía is a project designed to analyze the factors that contribute to heart attacks and predict the likelihood of someone experiencing one.
+
 <br>
 This project is divided into three parts:
 
