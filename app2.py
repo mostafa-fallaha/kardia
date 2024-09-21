@@ -9,16 +9,16 @@ st.set_page_config(
         page_icon="DataScience/images/heart_logo.png"
     )
 
-@st.cache
+@st.cache_resource
 def load_model():
     local_model_path = '/tmp/model.joblib'
 
-    # gdive_url = "https://drive.google.com/uc?export=download&id=1AIGGFloIz2XgwtwFybCrZVRSi_hvocVh"
+    gdive_url = "https://drive.google.com/uc?export=download&id=1AIGGFloIz2XgwtwFybCrZVRSi_hvocVh"
 
-    # # Check if the model already exists
-    # if not os.path.exists(local_model_path):
-    #     # st.write("Downloading model from Google Drive...")
-    #     gdown.download(gdive_url, local_model_path, quiet=False)
+    # Check if the model already exists
+    if not os.path.exists(local_model_path):
+        # st.write("Downloading model from Google Drive...")
+        gdown.download(gdive_url, local_model_path, quiet=False)
         # st.write("Model downloaded successfully")
     # else:
         # st.write("Model already exists, skipping download.")
