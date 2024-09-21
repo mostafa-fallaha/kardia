@@ -6,7 +6,7 @@ import joblib
 
 st.set_page_config(
         page_title="Heart Attack Prediction",
-        page_icon="images/heart_logo.png"
+        page_icon="DataScience/images/heart_logo.png"
     )
 
 
@@ -116,9 +116,9 @@ st.subheader("🎯 Take Control of Your Health with Advanced AI Predictions!")
 col1, col2 = st.columns([1, 3])
 
 with col1:
-    # st.image("images/doctor_1.png",
-    #             caption="I'll help you diagnose your heart health! - Dr. RandomForestClassifier ",
-    #             width=150)
+    st.image("DataScience/images/doctor_1.png",
+                caption="I'll help you diagnose your heart health! - Dr. RandomForestClassifier ",
+                width=150)
     submit = st.button("Predict")
 
 with col2:
@@ -142,7 +142,7 @@ with col2:
 
 # ================================= Sidebar =============================================
 st.sidebar.title("User Data")
-st.sidebar.image("images/magnifier.png", width=100)
+st.sidebar.image("DataScience/images/magnifier.png", width=100)
 
 # Input fields
 race = st.sidebar.selectbox("Race/Ethnicity category", list(RACE_TXT.values()))
