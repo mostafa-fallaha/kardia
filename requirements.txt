@@ -3,7 +3,6 @@ dvc
 sqlalchemy==2.0
 scipy
 pandas
-io
 scikit-learn
 imblearn
 streamlit
