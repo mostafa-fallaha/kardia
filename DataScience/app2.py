@@ -116,9 +116,9 @@ st.subheader("🎯 Take Control of Your Health with Advanced AI Predictions!")
 col1, col2 = st.columns([1, 3])
 
 with col1:
-    st.image("images/doctor_1.png",
-                caption="I'll help you diagnose your heart health! - Dr. RandomForestClassifier ",
-                width=150)
+    # st.image("images/doctor_1.png",
+    #             caption="I'll help you diagnose your heart health! - Dr. RandomForestClassifier ",
+    #             width=150)
     submit = st.button("Predict")
 
 with col2:
