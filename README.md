@@ -81,11 +81,11 @@ The app is designed with an intuitive interface that allows users to interact wi
 
 ### User Screens (Power BI report)
 
-| Overview screen                           | Line Chart                                |
+| Overview Screen                           | Line Chart Screen                         |
 | ----------------------------------------- | ----------------------------------------- |
 | ![Demo](./readme/assets/overview_1_1.gif) | ![Demo](./readme/assets/overview_2_1.gif) |
 
-| Personal Analysis Screen          | Sctter Screen                          |
+| Personal Analysis Screen          | Scatter Screen                         |
 | --------------------------------- | -------------------------------------- |
 | ![Demo](./readme/assets/pa_1.gif) | ![Demo](./readme/assets/scatter_1.gif) |
 
@@ -118,7 +118,7 @@ The app is designed with an intuitive interface that allows users to interact wi
 
 <!-- ### Precision in Development: Harnessing the Power of Unit Testing: -->
 
-### This project employs a validation methodology to ensure the reliability and accuracy data loading. Which helps in identifying and addressing potential issues early in the development process.
+#### This project employs a validation methodology to ensure the reliability and accuracy data loading. Which helps in identifying and addressing potential issues early in the development process.
 
 #### The Validations are logged to a logs table in the database.
 
@@ -142,7 +142,7 @@ _you can see also the data versioning with DVC_.
 
 2. **MySQL and MySQL Workbench**:
    Download them [here](https://dev.mysql.com/downloads/).<br>
-   _Also in this list, download the MySQL connector. If you're on windows, download this one Connector/NET_
+   _Also in this list, download the MySQL connector. If you're on windows, download this one `Connector/NET`_
 
 3. **Power BI**: it works on Windows only, and you can download it from the Microsoft Store or from [here](https://www.microsoft.com/en-us/power-platform/products/power-bi/downloads).
 
