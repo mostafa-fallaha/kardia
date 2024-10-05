@@ -120,7 +120,7 @@ with col1:
 
     This application uses a state-of-the-art RandomForestClassifier model,
     which was trained on survey data from over 200k US residents from the year 2022.
-    After extensive testing and tuning, this model achieved an impressive accuracy of around 95%,
+    After extensive testing and tuning, this model achieved an impressive accuracy of around 98.7%,
     making it a highly reliable tool for assessing your heart disease risk.
                 
     #### To predict your heart disease status, simply follow these steps:
