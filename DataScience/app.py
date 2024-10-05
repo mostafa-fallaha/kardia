@@ -93,15 +93,9 @@ st.set_page_config(
 st.title("Kardía: Heart Attack Prediction")
 st.subheader("🎯 Take Control of Your Health with Advanced AI Predictions!")
 
-col1, col2 = st.columns([1, 3])
+col1, col2 = st.columns([3, 1])
 
 with col1:
-    st.image("images/doctor_1.png",
-                caption="I'll help you diagnose your heart health! - Dr. RandomForestClassifier ",
-                width=150)
-    submit = st.button("Predict")
-
-with col2:
     st.markdown("""
     Did you know that machine learning models can predict your risk of heart disease with high accuracy?
     In this app, you can estimate your chance of heart disease in just seconds!
@@ -119,6 +113,12 @@ with col2:
 
     3. Wait for the result: In a matter of seconds, you'll receive a prediction on your heart disease risk.
     """)
+
+with col2:
+    st.image("images/doctor_1.png",
+                caption="I'll help you diagnose your heart health! - Dr. RandomForestClassifier ",
+                width=150)
+    submit = st.button("Predict")
 
 # ================================= Sidebar =============================================
 st.sidebar.title("User Data")
