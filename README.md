@@ -1,8 +1,23 @@
 <img src="./readme/title1.svg"/>
 
+### Table of Contents
+
+- [Project Philosophy](#project-philosophy)
+- [Tech Stacks](#tech-stacks)
+- [Data Warehouse Schema](#data-warehouse-schema)
+- [Streamlit Cloud Deployment](#streamlit-cloud-deployment)
+- [Implementation](#implementation)
+- [Data Validations](#data-validations)
+- [How To Run?](#how-to-run)
+
+---
+
 <br><br>
 
 <!-- project philosophy -->
+
+<a id="project-philosophy"></a>
+
 <img src="./readme/title2.svg"/>
 
 #### Kardía is a project designed to analyze the factors that contribute to heart attacks and predict the likelihood of someone experiencing one.
@@ -24,6 +39,9 @@ This project is divided into three parts:
 <br><br>
 
 <!-- Tech stack -->
+
+<a id="tech-stacks"></a>
+
 <img src="./readme/title3.svg"/>
 
 ### Kardía is built using the following technologies:
@@ -40,16 +58,20 @@ This project is divided into three parts:
 
 <br><br>
 
-<!-- Database Design -->
-<img src="./readme/title5.svg"/>
+<!-- Data Warehouse Schema -->
 
-<!-- ### Architecting Data Excellence: Innovative Database Design Strategies: -->
+<a id="data-warehouse-schema"></a>
+
+<img src="./readme/title5.svg"/>
 
 <img src="./ETL/dwh/final_dwh.png"/>
 
 <br><br>
 
-<!-- Streamlit Community Cloud -->
+<!-- Streamlit Cloud Deployment -->
+
+<a id="streamlit-cloud-deployment"></a>
+
 <img src="./readme/title11.svg"/>
 
 ### Deployment on Streamlit Community Cloud
@@ -71,6 +93,9 @@ The app is designed with an intuitive interface that allows users to interact wi
 <br><br>
 
 <!-- Implementation -->
+
+<a id="implementation"></a>
+
 <img src="./readme/title6.svg"/>
 
 ### User Screens (Streamlit Web App)
@@ -95,28 +120,11 @@ The app is designed with an intuitive interface that allows users to interact wi
 
 <br><br>
 
-<!-- Prompt Engineering -->
-<!-- <img src="./readme/title7.svg"/>
+<!-- Data Validations -->
 
-### Mastering AI Interaction: Unveiling the Power of Prompt Engineering:
+<a id="data-validations"></a>
 
-> This project utilizes a Random Forest Classifier to predict the likelihood of heart attacks based on health-related features. By applying Chi-Square tests for feature selection, the most relevant factors contributing to heart attacks are identified. The model is versioned using MLflow, ensuring efficient tracking, management, and comparison of different model versions to continually improve prediction accuracy. This structured approach guarantees a robust and scalable machine learning pipeline for heart health predictions.
-
-<br><br> -->
-
-<!-- AWS Deployment -->
-<!-- <img src="./readme/title8.svg"/>
-
-### Efficient AI Deployment: Unleashing the Potential with AWS Integration:
-
-- This project leverages AWS deployment strategies to seamlessly integrate and deploy natural language processing models. With a focus on scalability, reliability, and performance, we ensure that AI applications powered by these models deliver robust and responsive solutions for diverse use cases.
-
-<br><br> -->
-
-<!-- Validations -->
 <img src="./readme/title9.svg"/>
-
-<!-- ### Precision in Development: Harnessing the Power of Unit Testing: -->
 
 #### This project employs a validation methodology to ensure the reliability and accuracy data loading. Which helps in identifying and addressing potential issues early in the development process.
 
@@ -131,6 +139,9 @@ _you can see also the data versioning with DVC_.
 <br><br>
 
 <!-- How to run -->
+
+<a id="how-to-run"></a>
+
 <img src="./readme/title10.svg"/>
 
 > To set up Kardía locally, follow these steps:
