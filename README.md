@@ -88,7 +88,7 @@ To ensure efficient use of resources, the model is cached using Streamlit’s `@
 
 The app is designed with an intuitive interface that allows users to interact with the machine learning model. Streamlit simplifies deployment by automatically handling scalability and hosting, while the app remains responsive and user-friendly.
 
-> **_You can access the Streamlit app from [here](https://heart-disease-prediction-fsd.streamlit.app/)_**.
+> **_You can access the Streamlit app from [here](https://kardia.streamlit.app/)_**.
 
 <br><br>
 
